@@ -235,3 +235,32 @@ sendingTypes.forEach(function (item, i, arr) {
 	});
 });
 
+// Objectify form		
+  function toJSONString(form) {
+            var obj = {};
+            var elements = form.querySelectorAll("input");
+            for (var i = 0; i < elements.length; ++i) {
+                var element = elements[i];
+                var name = element.name;
+                var value = element.value;
+                //debugger;
+
+                if (name.indexOf("[]") !== -1) {
+                    name = name.split("[]")[0];
+                    if (obj[name]) {
+                        obj[name].push(value);
+                        continue;
+                    }
+                    obj[name] = [];
+                    obj[name].push(value);
+                    continue;
+                }
+
+
+                if (name) {
+                    obj[ name ] = value;
+                }
+            }
+
+            return obj;
+        }
