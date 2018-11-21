@@ -264,3 +264,12 @@ sendingTypes.forEach(function (item, i, arr) {
 
             return obj;
         }
+// Find index in array
+function findIndexWith(arr, prop, value) {
+    for(var i = 0; i < arr.length; i += 1) {
+        if(arr[i][prop] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
