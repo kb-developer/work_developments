@@ -274,3 +274,11 @@ function findIndexWith(arr, prop, value) {
     }
     return -1;
 }
+
+
+// split array into pieces
+var i,j,temparray,chunk = 10;
+for (i=0,j=array.length; i<j; i+=chunk) {
+    temparray = array.slice(i,i+chunk);
+    // do whatever
+}
