@@ -1,14 +1,9 @@
 @import "../common/less/variables";
 /*      default style       */
 input,textarea {
-    &::-webkit-input-placeholder {color: @light-grey}
-    &::-moz-placeholder          {color: @light-grey}
-    &:-moz-placeholder           {color: @light-grey}
-    &:-ms-input-placeholder      {color: @light-grey}
+    // Without prefix if it to use postcss  
+    &::placeholder {color: @light-grey}
     &:focus {
-        &::-webkit-input-placeholder {color: transparent}
-        &::-moz-placeholder          {color: transparent}
-        &:-moz-placeholder           {color: transparent}
-        &:-ms-input-placeholder      {color: transparent}
+        &::placeholder {color: transparent}
     }
 }
